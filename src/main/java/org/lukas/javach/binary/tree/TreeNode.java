@@ -5,10 +5,19 @@ package org.lukas.javach.binary.tree;
  *
  * @author Lukas Pecak
  */
-interface TreeNode<T> extends Comparable<TreeNode<T>> {
+interface TreeNode<T extends Comparable<T>> {
+
+    T get();
 
     TreeNode<T> getLeftChild();
+
+    void setLeftChild(TreeNode<T> node);
+
     TreeNode<T> getRightChild();
+
+    void setRightChild(TreeNode<T> node);
+
     boolean hasLeftChild();
+
     boolean hasRightChild();
 }
